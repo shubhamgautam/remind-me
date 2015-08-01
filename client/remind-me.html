@@ -1,0 +1,52 @@
+<head>
+  <title>remind-me</title>
+</head>
+
+<template name="Home">
+  {{> header}}
+  <div class="row">
+    <div class="offset-l2 offset-m1 offset-s1">
+      {{> add}}
+      {{#each tiles}}
+        {{> tileItem}}
+      {{/each}}
+    </div>
+  </div>
+</template>
+
+
+<template name="hello">
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="header">
+  <div class="navbar-fixed blue-grey darken-4">
+    <nav>
+      <div class="nav-wrapper blue-grey darken-4">
+        <a href="#!" class="brand-logo">Remind-Me</a>
+        <button class="btn waves-effect right login-btn" >login</button>
+
+      </div>
+    </nav>
+  </div>
+</template>
+
+<template name="add">
+  <div>
+    <form class="newTile row">
+      <input id="name" placeholder="Name" class="col offset-inp s12 m4" type="text">
+      <input id="val" placeholder="link" class="col offset-inp s12 m4" type="text">
+      <button class="btn-large waves-effect waves-light submit-tile">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+    </div>
+</template>
+
+<template name="tileItem">
+    <div class=" card-panel hoverable row">
+      <div class="title tile1 col s4 m4">{{tileName}}</div>
+      <div class="title tile2 col s4 m4" style="display:none"><a href="{{tileVal}}">{{tileVal}}</a></div>
+      <a href="#!" class="secondary-content delete"><i class="material-icons">close</i></a>
+    </div>
+</template>
