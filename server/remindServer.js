@@ -1,5 +1,6 @@
+
+var Tiles = new Mongo.Collection("tiles");
 if (Meteor.isServer){
-  debugger;
   Meteor.methods({
        duckduckgo: function () {
            this.unblock();

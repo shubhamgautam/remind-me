@@ -1,4 +1,16 @@
 var Tiles = new Mongo.Collection("tiles");
+
+Tiles.allow({
+      insert: function () {
+         return true;
+       },
+      update: function () {
+         return true;
+      },
+      remove: function () {
+         return true;
+      }
+  });
 if (Meteor.isClient) {
   // counter starts at 0
   value=0;
@@ -24,7 +36,7 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.body.helpers({
+  Template.Home.helpers({
     tiles:function(){
       return Tiles.find({},{sort:{createdAt:-1}});
 
@@ -37,7 +49,6 @@ if (Meteor.isClient) {
   Template.add.events({
     "click .submit-tile" : function(evt){
       evt.preventDefault();
-      debugger;
       var tileName = $("#name").val();
       var tileVal = $("#val").val();
 
@@ -55,7 +66,6 @@ if (Meteor.isClient) {
 
   Template.header.events({
     'click button': function(){
-      alert("login");
       Router.go("login");
 
     }
@@ -68,12 +78,11 @@ if (Meteor.isClient) {
         });
     },
 
-    "click .delete": function(){debugger;
+    "click .delete": function(){
       Tiles.remove(this._id);
     },
 
     "click .tile1": function(evt){
-      debugger;
        var targetElem = evt.target;
        $(targetElem).toggle();
        $(targetElem).siblings('.tile2').toggle();
@@ -89,7 +98,6 @@ if (Meteor.isClient) {
   Template.tileItem.onRendered(function(){
     if(value<=0){
     Meteor.call("duckduckgo", function(error, results) {
-        debugger;
           console.log(results.content); //results.data should be a JSON object
           var duckObj =JSON.parse(results.content);
 

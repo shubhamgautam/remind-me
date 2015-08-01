@@ -16,13 +16,10 @@ Router.configure({
 
 
   Router.route('/', function () {
-    alert("home");
     this.render('Home');
   });
 
   Router.route('/login',function(){
-    alert("login");
-
       this.render('login');
   });
 }
