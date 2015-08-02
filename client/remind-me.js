@@ -55,6 +55,8 @@ if (Meteor.isClient) {
       Tiles.insert({
         tileName : tileName,
         tileVal : tileVal,
+        owner: Meteor.userId(),           // _id of logged in user
+        username: Meteor.user().username , // username of logged in user
         createdAt : new Date()
       });
 
@@ -120,8 +122,8 @@ if (Meteor.isClient) {
     })
   });
  //
- //  Accounts.ui.config({
- //   passwordSignupFields: "USERNAME_ONLY"
- // });
+  Accounts.ui.config({
+   passwordSignupFields: "USERNAME_ONLY"
+ });
 
 }

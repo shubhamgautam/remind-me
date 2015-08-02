@@ -24,8 +24,11 @@
     <nav>
       <div class="nav-wrapper blue-grey darken-4">
         <a href="#!" class="brand-logo">Remind-Me</a>
-        <button class="btn waves-effect right login-btn" >login</button>
-
+        {{#if currentUser}}
+          <span class="right">{{currentUser.username}}</span>
+        {{else}}
+          <button class="btn waves-effect right login-btn" >login</button>
+        {{/if}}
       </div>
     </nav>
   </div>
