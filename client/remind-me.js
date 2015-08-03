@@ -100,7 +100,7 @@ if (Meteor.isClient) {
   Template.tileItem.onRendered(function(){
     if(value<=0){
     Meteor.call("duckduckgo", function(error, results) {
-          console.log(results.content); //results.data should be a JSON object
+          //console.log(results.content); //results.data should be a JSON object
           var duckObj =JSON.parse(results.content);
 
           // for(var x in duckObj.RelatedTopics){

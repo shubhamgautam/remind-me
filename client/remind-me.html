@@ -1,10 +1,13 @@
 <head>
   <title>remind-me</title>
+  <link type="text/css" rel="stylesheet" href="css/materialize.css" />
+  <link type="text/css" rel="stylesheet" href="main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
 <template name="Home">
   {{> header}}
-  <div class="row">
+  <div class="row dashboard">
     <div class="offset-l2 offset-m1 offset-s1">
       {{> add}}
       {{#each tiles}}
@@ -37,8 +40,8 @@
 <template name="add">
   <div>
     <form class="newTile row">
-      <input id="name" placeholder="Name" class="col offset-inp s12 m4" type="text">
-      <input id="val" placeholder="link" class="col offset-inp s12 m4" type="text">
+      <input id="name" placeholder="Name" class="col offset-inp s12 m5" type="text">
+      <input id="val" placeholder="link" class="col offset-inp s12 m5" type="text">
       <button class="btn-large waves-effect waves-light submit-tile">Submit
         <i class="material-icons right">send</i>
       </button>
@@ -47,9 +50,11 @@
 </template>
 
 <template name="tileItem">
-    <div class=" card-panel hoverable row">
-      <div class="title tile1 col s4 m4">{{tileName}}</div>
-      <div class="title tile2 col s4 m4" style="display:none"><a href="{{tileVal}}">{{tileVal}}</a></div>
-      <a href="#!" class="secondary-content delete"><i class="material-icons">close</i></a>
+    <div class=" card-panel hoverable tilePan row">
+      <div class="title tile tile1 col ">{{tileName}}</div>
+      <div class="title tile tile2 col " style="display:none"><a href="{{tileVal}}">{{tileVal}}</a></div>
+      <div class="col">
+        <a class="btn-floating btn waves-effect waves-light red"><i class="mdi mdi-close">close</i></a>
+      </div>
     </div>
 </template>

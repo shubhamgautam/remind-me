@@ -152,3 +152,27 @@ header .hide-completed {
 .container{
   background-color: transparent;
 }
+
+.dashboard .tilePan{
+  padding:0px;
+}
+
+.tilePan .tile{
+  height: 4em;
+  padding-top: 1em !important;
+  width:90%;
+  border:0 !important;
+  background-color: black;
+  color:white;
+  border-right: 1px solid grey;
+}
+
+.submit-tile{
+  width:12%;
+
+}
+.close-tile{
+  padding:1em;
+  background-color: red;
+  color:white;
+}
